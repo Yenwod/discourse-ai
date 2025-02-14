@@ -19,7 +19,7 @@ class DiscourseAi::Utils::PdfToImages
   end
 
   def extract_pages
-    Dir.mktmpdir("discourse-pdf-#{SecureRandom.hex(8)}")
+    temp_dir = Dir.mktmpdir("discourse-pdf-#{SecureRandom.hex(8)}")
 
     begin
       pdf_path =
