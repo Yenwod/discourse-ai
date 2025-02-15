@@ -1,4 +1,8 @@
 # frozen_string_literal: true
+require 'bundler/setup'
+Bundler.require(:default, :migrations)
+
+require 'ruby-progressbar'
 
 desc "Backfill embeddings for all topics and posts"
 task "ai:embeddings:backfill", %i[embedding_def_id concurrency] => [:environment] do |_, args|
